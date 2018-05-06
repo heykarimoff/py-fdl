@@ -11,7 +11,7 @@ class ApiKeyError(FirebaseDynamicLinksError):
     """
 
 
-class ServerError(FirebaseDynamicLinksError):
+class FirebaseServerError(FirebaseDynamicLinksError):
     """
     Server error on Firebase server
     """

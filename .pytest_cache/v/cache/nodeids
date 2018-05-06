@@ -1,0 +1,3 @@
+[
+  "tests/test_dynamic_links.py::test_dynamic_link_app_code"
+]

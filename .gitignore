@@ -1,2 +1,3 @@
-
 .idea/
+firebase_dynamic_links/__pycache__/
+tests/__pycache__/

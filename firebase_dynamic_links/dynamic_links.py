@@ -3,33 +3,35 @@ from urllib.parse import urlencode
 
 from firebase_dynamic_links.errors import FirebaseServerError
 
-FIREBASE_API_KEY = '<your_firebase_app_api_key>'
-FIREBASE_API_URL = 'https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key={}'.format(FIREBASE_API_KEY)
+
+def generate_short_link(client, app_code, query_params):
+    long_dynamic_link = generate_long_link(app_code=app_code, query_params=query_params)
+
+    try:
+        return client.shorten_link(long_link=long_dynamic_link)
+    except FirebaseServerError:
+        pass
 
 
-class DynamicLink:
-    def __init__(self, app_code, **kwargs):
-        self.app_code = app_code
-        self.params = kwargs
+def generate_long_link(app_code, query_params):
+    query_string = urlencode(query_params)
+    link = 'https://{app_code}.app.goo.gl/?{query_string}'.format(app_code=app_code, query_string=query_string)
 
-    def get_long_link(self):
-        return self.generate_long_link()
+    return link
 
-    def get_short_link(self):
-        return self.generate_short_link()
 
-    def generate_long_link(self):
-        query_string = urlencode(self.get_params())
-        link = 'https://{app_code}.app.goo.gl/?{query_string}'.format(app_code=self.app_code, query_string=query_string)
+class FirebaseClient:
+    FIREBASE_API_URL = 'https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key={api_key}'
 
-        return link
+    def __init__(self, api_key):
+        self.api_key = api_key
+        self.url = self.FIREBASE_API_URL.format(api_key=self.api_key)
 
-    def generate_short_link(self):
-        long_dynamic_link = self.generate_long_link()
+    def shorten_link(self, long_link):
         payload = {
-            "longDynamicLink": long_dynamic_link
+            "longDynamicLink": long_link
         }
-        response = requests.post(FIREBASE_API_URL, json=payload)
+        response = requests.post(self.url, json=payload)
         data = response.json()
 
         if not response.ok:
@@ -37,5 +39,13 @@ class DynamicLink:
 
         return data.get('shortLink')
 
-    def get_params(self):
-        return self.params
+
+class DynamicLinkBuilder:
+    def __init__(self, client):
+        self.client = client
+
+    def generate_long_link(self, app_code, **kwargs):
+        return generate_long_link(app_code=app_code, query_params=kwargs)
+
+    def generate_short_link(self, app_code, **kwargs):
+        return generate_short_link(client=self.client, app_code=app_code, query_params=kwargs)

@@ -44,8 +44,8 @@ setup(
     },
     project_urls={
         'Bug Reports': 'https://github.com/heykarimoff/py-fdl/issues',
-        'Funding': 'https://donate.pypi.org',
-        'Say Thanks!': 'http://saythanks.io/to/karimoff',
+        'Funding': 'https://www.karimoff.me',
+        'Say Thanks!': 'https://saythanks.io/to/heykarimoff',
         'Source': 'https://github.com/heykarimoff/py-fdl',
     },
 )

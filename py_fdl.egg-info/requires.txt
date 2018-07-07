@@ -1,7 +1,0 @@
-requests
-
-[dev]
-pytest
-
-[test]
-pytest

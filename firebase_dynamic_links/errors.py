@@ -5,7 +5,13 @@ class FirebaseDynamicLinksError(Exception):
     """
 
 
-class ApiKeyError(FirebaseDynamicLinksError):
+class ValidationError(FirebaseDynamicLinksError):
+    """
+    Validation error on input values
+    """
+
+
+class APIKeyError(FirebaseDynamicLinksError):
     """
     Firebase API Key hasn't been set
     """

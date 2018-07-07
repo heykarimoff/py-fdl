@@ -1,4 +1,4 @@
-from firebase_dynamic_links.dynamic_links import generate_long_link
+from firebase_dynamic_links import generate_long_link
 
 
 def test_generate_long_link():

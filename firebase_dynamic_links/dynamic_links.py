@@ -7,10 +7,7 @@ from firebase_dynamic_links.errors import FirebaseServerError
 def generate_short_link(client, app_code, query_params):
     long_dynamic_link = generate_long_link(app_code=app_code, query_params=query_params)
 
-    try:
-        return client.shorten_link(long_link=long_dynamic_link)
-    except FirebaseServerError:
-        pass
+    return client.shorten_link(long_link=long_dynamic_link)
 
 
 def generate_long_link(app_code, query_params):

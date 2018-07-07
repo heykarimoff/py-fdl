@@ -1,7 +1,7 @@
 import requests
 from urllib.parse import urlencode
 
-from firebase_dynamic_links.errors import FirebaseServerError
+from .errors import FirebaseServerError
 
 
 def generate_short_link(client, app_code, query_params):

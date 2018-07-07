@@ -1,12 +1,11 @@
-import unittest
-
-from firebase_dynamic_links.dynamic_links import DynamicLinkBuilder, FirebaseClient
+from firebase_dynamic_links.dynamic_links import generate_long_link
 
 
-def test_dynamic_link_app_code():
+def test_generate_long_link():
     app_code = 'my_app_code'
-    dynamic_link = DynamicLinkBuilder(client=FirebaseClient(api_key=''))
+    params = {
+        'isi': 'store_id',
+    }
+    dynamic_link = generate_long_link(app_code=app_code, query_params=params)
 
-    link = dynamic_link.generate_short_link()
-
-    assert app_code in link
+    assert dynamic_link == 'https://my_app_code.app.goo.gl/?isi=store_id'

@@ -34,11 +34,7 @@ setup(
     ],
     extras_require={
         'dev': ['pytest'],
-        'test': ['pytest'],
     },
-    package_data={},
-    data_files=[],
-    entry_points={},
     project_urls={
         'Bug Reports': 'https://github.com/heykarimoff/firebase_dynamic_links/issues',
         'Funding': 'https://donate.pypi.org',

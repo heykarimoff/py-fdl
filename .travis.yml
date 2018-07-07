@@ -7,6 +7,6 @@ python:
   - '3.6'
 install:
   - python setup.py install
+  - pip install pytest
 script:
-  - python setup.py test
-  - python -m pytest
+  - pytest

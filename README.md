@@ -6,7 +6,8 @@ Python client for Firebase Dynamic Links
 
 ```python
 
-from firebase_dynamic_links.dynamic_links import DynamicLinkBuilder, FirebaseClient
+from firebase_dynamic_links.client import FirebaseClient
+from firebase_dynamic_links.builder import DynamicLinkBuilder
 
 dynamic_link_builder = DynamicLinkBuilder(client=FirebaseClient(api_key='your_secret_key'))
 

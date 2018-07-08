@@ -16,3 +16,9 @@ long_link = dynamic_link_builder.generate_long_link(app_code='your_app_code', is
 short_link = dynamic_link_builder.generate_short_link(app_code='your_app_code', isi='com.example.app')
 
 ```
+
+## Install
+
+```bash
+pip install py-fdl
+```

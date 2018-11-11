@@ -7,13 +7,12 @@ Python client for Firebase Dynamic Links
 
 ```python
 
-from firebase_dynamic_links.client import FirebaseClient
-from firebase_dynamic_links.builder import DynamicLinkBuilder
+from firebase_dynamic_links import dynamic_link_builder
 
-dynamic_link_builder = DynamicLinkBuilder(client=FirebaseClient(api_key='your_secret_key'))
+builder = dynamic_link_builder(api_key='your_api_key')
 
-long_link = dynamic_link_builder.generate_long_link(app_code='your_app_code', isi='com.example.app')
-short_link = dynamic_link_builder.generate_short_link(app_code='your_app_code', isi='com.example.app')
+long_link = builder.generate_long_link(app_code='your_app_code', isi='com.example.app')
+short_link = builder.generate_short_link(app_code='your_app_code', isi='com.example.app')
 
 ```
 

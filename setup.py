@@ -3,29 +3,32 @@ from os import path
 
 from setuptools import setup
 
-from firebase_dynamic_links import VERSION
 
 here = path.abspath(path.dirname(__file__))
 
+about = {}
+with open(path.join(here, 'firebase_dynamic_links', '__version__.py'), 'r', 'utf-8') as f:
+    exec(f.read(), about)
+
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = f.read()
+    readme = f.read()
 
 install_requires = ['requests'],
 packages = ['firebase_dynamic_links']
 
 setup(
-    name='py-fdl',
-    version=VERSION,
-    description='Python client for Firebase Dynamic Links',
-    long_description=long_description,
+    name=about['__title__'],
+    version=about['__version__'],
+    description=about['__description__'],
+    long_description=readme,
     long_description_content_type='text/markdown',
-    url='https://github.com/heykarimoff/py-fdl',
-    author='Mukhammad Karimov',
-    author_email='hey@karimoff.me',
-    maintainer='Mukhammad Karimov',
-    maintainer_email='hey@karimoff.me',
-    license='MIT',
-    keywords='firebase dynamic links super links',
+    url=about['__url__'],
+    author=about['__author__'],
+    author_email=about['__author_email__'],
+    maintainer=about['__author__'],
+    maintainer_email=about['__author_email__'],
+    license=about['__license__'],
+    keywords=about['__keywords__'],
     packages=packages,
     install_requires=install_requires,
     test_suite='tests',

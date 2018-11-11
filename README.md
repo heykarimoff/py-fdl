@@ -1,7 +1,11 @@
 [![Build Status](https://travis-ci.org/heykarimoff/firebase_dynamic_links.svg?branch=master)](https://travis-ci.org/heykarimoff/firebase_dynamic_links)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/heykarimoff)
 # py-fdl
-Python client for Firebase Dynamic Links
+Python client for [Firebase Dynamic Links](https://firebase.google.com/docs/dynamic-links/)
+
+## Get started
+Get you *Web API Key* from [Firebase console Settings page](https://console.firebase.google.com/project/_/settings/general/).
+Reference: [Create Dynamic Links with the REST API](https://firebase.google.com/docs/dynamic-links/rest) 
 
 ## Usage
 

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/heykarimoff/firebase_dynamic_links.svg?branch=master)](https://travis-ci.org/heykarimoff/firebase_dynamic_links)
+[![Build Status](https://travis-ci.org/heykarimoff/py-fdl.svg?branch=master)](https://travis-ci.org/heykarimoff/py-fdl)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/heykarimoff)
 # py-fdl
 Python client for [Firebase Dynamic Links](https://firebase.google.com/docs/dynamic-links/)

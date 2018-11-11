@@ -1,4 +1,4 @@
-__title__ = 'firebase_dynamic_links'
+__title__ = 'py-fdl'
 __description__ = 'Python client for Firebase Dynamic Links'
 __url__ = 'https://github.com/heykarimoff/py-fdl'
 __version__ = '1.1.0'

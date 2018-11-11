@@ -11,7 +11,7 @@ def generate_short_link(client, app_code, query_params):
 
 def generate_long_link(app_code, query_params):
     query_string = urlencode(query_params)
-    link = 'https://{app_code}.app.goo.gl/?{query_string}'.format(app_code=app_code, query_string=query_string)
+    link = 'https://{app_code}.page.link/?{query_string}'.format(app_code=app_code, query_string=query_string)
 
     return link
 

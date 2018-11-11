@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/heykarimoff/firebase_dynamic_links.svg?branch=master)](https://travis-ci.org/heykarimoff/firebase_dynamic_links)
+[![Build Status](https://travis-ci.org/heykarimoff/py-fdl.svg?branch=master)](https://travis-ci.org/heykarimoff/py-fdl)
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/heykarimoff)
 # py-fdl
 Python client for [Firebase Dynamic Links](https://firebase.google.com/docs/dynamic-links/)
@@ -13,10 +13,23 @@ Reference: [Create Dynamic Links with the REST API](https://firebase.google.com/
 
 from firebase_dynamic_links import dynamic_link_builder
 
-builder = dynamic_link_builder(api_key='your_api_key')
+builder = dynamic_link_builder(api_key='<Web API Key>')
+options = {
+    'link': 'https://www.karimoff.me',
+    'apn': 'com.example.android', 
+    'ibi': 'com.example.ios'
+}
 
-long_link = builder.generate_long_link(app_code='your_app_code', isi='com.example.app')
-short_link = builder.generate_short_link(app_code='your_app_code', isi='com.example.app')
+long_link = builder.generate_long_link(app_code='karimoff', **options)
+
+# long_link
+# 'https://karimoff.page.link/?link=https%3A%2F%2Fwww.karimoff.me&apn=com.example.android&ibi=com.example.ios'
+
+
+short_link = builder.generate_short_link(app_code='karimoff', **options)
+
+# short_link
+# 'https://karimoff.page.link/ZhtUPPWJXLT9PKXg6'
 
 ```
 

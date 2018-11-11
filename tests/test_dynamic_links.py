@@ -20,7 +20,7 @@ def test_generate_short_link():
 
     short_link = generate_short_link(client=client, app_code=app_code, query_params=params)
 
-    assert short_link == 'https://my_app_code.app.goo.gl/?isi=store_id'
+    assert short_link == 'https://my_app_code.page.link/?isi=store_id'
 
 
 def test_generate_long_link():
@@ -30,5 +30,5 @@ def test_generate_long_link():
     }
     dynamic_link = generate_long_link(app_code=app_code, query_params=params)
 
-    assert dynamic_link == 'https://my_app_code.app.goo.gl/?isi=store_id'
+    assert dynamic_link == 'https://my_app_code.page.link/?isi=store_id'
 

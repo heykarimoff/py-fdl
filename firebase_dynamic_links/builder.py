@@ -1,5 +1,7 @@
 from urllib.parse import urlencode
 
+from .client import FirebaseClient
+
 
 def generate_short_link(client, app_code, query_params):
     long_dynamic_link = generate_long_link(app_code=app_code, query_params=query_params)
@@ -23,3 +25,7 @@ class DynamicLinkBuilder:
 
     def generate_short_link(self, app_code, **kwargs):
         return generate_short_link(client=self.client, app_code=app_code, query_params=kwargs)
+
+
+def dynamic_link_builder(api_key):
+    return DynamicLinkBuilder(client=FirebaseClient(api_key=api_key))
